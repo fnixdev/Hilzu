@@ -395,7 +395,8 @@ if userge.has_bot:
 
         buttons = parse_buttons(p_num,
                                 '|'.join(pos_list[:3]),
-                                lambda x: f"⚖ {x}" if is_filter(x) else f"⚔ {x}",
+                                lambda x: f"⚖ {x}" if is_filter(
+                                    x) else f"⚔ {x}",
                                 (flt.name for flt in plg.commands + plg.filters))
 
         buttons = buttons[:-1] + [tmp_btns] + [buttons[-1]]
@@ -507,7 +508,8 @@ if userge.has_bot:
                         InlineQueryResultArticle(
                             id=uuid4(),
                             title="Inline Error Text",
-                            input_message_content=InputTextMessageContent(err_text),
+                            input_message_content=InputTextMessageContent(
+                                err_text),
                             description="Inline Error text with help support button.",
                             thumb_url="https://telegra.ph/file/aa2776cc8f104120d2e4a.jpg",
                             reply_markup=InlineKeyboardMarkup(button)))
