@@ -28,7 +28,8 @@ _CATEGORY = {
     'builtin': '⚙️',
     'tools': '🧰',
     'utils': '🗂',
-    'misc': '💎'
+    'misc': '💎',
+    'kawaii': '✨'
 }
 SAVED_SETTINGS = get_collection("CONFIGS")
 
@@ -130,7 +131,7 @@ if userge.has_bot:
             else:
                 user_dict = await userge.bot.get_user_dict(config.OWNER_ID[0])
                 await c_q.answer(
-                    f"Only {user_dict['flname']} Can Access this...! Build Your Own @TheUserge 🤘",
+                    f"Only {user_dict['flname']} Can Access this...! Build Your Own @fnixsup 🤘",
                     show_alert=True)
 
         return wrapper
@@ -197,7 +198,7 @@ if userge.has_bot:
             return
 
         if len(pos_list) == 2:
-            text = "🖥 **Userge Main Menu** 🖥"
+            text = "Hilzu Menu"
             buttons = main_menu_buttons()
         elif len(pos_list) == 3:
             text, buttons = category_data(cur_pos)
@@ -254,7 +255,7 @@ if userge.has_bot:
     @check_owner
     async def callback_mm(callback_query: CallbackQuery):
         await callback_query.edit_message_text(
-            "🖥 **Userge Main Menu** 🖥", reply_markup=InlineKeyboardMarkup(main_menu_buttons()))
+            "**Hilzu Main Menu**", reply_markup=InlineKeyboardMarkup(main_menu_buttons()))
 
     @userge.bot.on_callback_query(filters=filters.regex(pattern=r"^chgclnt$"))
     @check_owner
@@ -445,20 +446,20 @@ if userge.has_bot:
                 id=uuid4(),
                 title="Repo",
                 input_message_content=InputTextMessageContent(
-                    "**Here's how to setup Userge** 😎"
+                    "**Here's how to setup Hilzu**"
                 ),
-                url="https://github.com/UsergeTeam/Userge",
+                url="https://github.com/fnixdev/Hilzu",
                 description="Setup Your Own",
-                thumb_url="https://imgur.com/download/Inyeb1S",
+                thumb_url="https://telegra.ph/file/aa2776cc8f104120d2e4a.jpg",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
                             InlineKeyboardButton(
-                                "🧰 Userge Repo",
-                                url="https://github.com/UsergeTeam/Userge"),
+                                "Hilzu Repo",
+                                url="https://github.com/fnixdev/Hilzu"),
                             InlineKeyboardButton(
-                                "🖥 Deploy Userge",
-                                url="https://t.me/theUserge/102")
+                                "Deploy Hilzu",
+                                url="https://t.me/fnixsup/281433")
                         ]
                     ]
                 )
@@ -471,11 +472,11 @@ if userge.has_bot:
                     id=uuid4(),
                     title="Main Menu",
                     input_message_content=InputTextMessageContent(
-                        "🖥 **Userge Main Menu** 🖥"
+                        "**Hilzu Main Menu**"
                     ),
-                    url="https://github.com/UsergeTeam/Userge",
-                    description="Userge Main Menu",
-                    thumb_url="https://imgur.com/download/Inyeb1S",
+                    url="https://github.com/fnixdev/Hilzu",
+                    description="Hilzu Main Menu",
+                    thumb_url="https://telegra.ph/file/aa2776cc8f104120d2e4a.jpg",
                     reply_markup=InlineKeyboardMarkup(main_menu_buttons())
                 )
             )
@@ -508,7 +509,7 @@ if userge.has_bot:
                             title="Inline Error Text",
                             input_message_content=InputTextMessageContent(err_text),
                             description="Inline Error text with help support button.",
-                            thumb_url="https://imgur.com/download/Inyeb1S",
+                            thumb_url="https://telegra.ph/file/aa2776cc8f104120d2e4a.jpg",
                             reply_markup=InlineKeyboardMarkup(button)))
 
         await inline_query.answer(results=results, cache_time=3)
