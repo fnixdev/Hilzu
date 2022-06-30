@@ -11,13 +11,16 @@
 import asyncio
 import importlib
 import re
+import os
 import shlex
 from os.path import basename, join, exists
 from typing import Tuple, List, Optional, Iterator, Union, Any
+from telegraph import upload_file
 
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, User
 from pyrogram import enums
 
+from .progress import progress
 import userge
 
 _LOG = userge.logging.getLogger(__name__)
@@ -265,3 +268,40 @@ def get_custom_import_re(req_module, re_raise=True) -> Any:
             raise
 
         return None
+
+
+async def upload_media_tg(message: Message):
+    replied = message.reply_to_message
+    if not (
+        (replied.photo and replied.photo.file_size <= 5242880)
+        or (replied.animation and replied.animation.file_size <= 5242880)
+        or (
+            replied.video
+            and replied.video.file_name.endswith((".mp4", ".mkv"))
+            and replied.video.file_size <= 5242880
+        )
+        or (
+            replied.document
+            and replied.document.file_name.endswith(
+                (".jpg", ".jpeg", ".png", ".gif", ".mp4", ".mkv")
+            )
+            and replied.document.file_size <= 5242880
+        )
+    ):
+        await message.err("not supported!")
+        return
+    await message.edit("`processando...`")
+    dl_loc = await message.client.download_media(
+        message=message.reply_to_message,
+        file_name=userge.config.Dynamic.DOWN_PATH,
+        progress=progress,
+        progress_args=(message, "tentando fazer download"),
+    )
+    await message.edit("`fazendo upload no telegraph...`")
+    try:
+        response = upload_file(dl_loc)
+    except Exception as t_e:
+        await message.err(t_e)
+        return
+    os.remove(dl_loc)
+    return str(response[0])
