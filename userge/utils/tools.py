@@ -20,7 +20,6 @@ from telegraph import upload_file
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, User
 from pyrogram import enums
 
-from .progress import progress
 import userge
 
 _LOG = userge.logging.getLogger(__name__)
@@ -294,7 +293,6 @@ async def upload_media_tg(message: Message):
     dl_loc = await message.client.download_media(
         message=message.reply_to_message,
         file_name=userge.config.Dynamic.DOWN_PATH,
-        progress=progress,
         progress_args=(message, "tentando fazer download"),
     )
     await message.edit("`fazendo upload no telegraph...`")
