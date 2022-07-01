@@ -141,7 +141,7 @@ def _format_about(about: Union[str, Dict[str, Union[str, List[str], Dict[str, st
         del about['description']
 
     if 'flags' in about:
-        tmp_chelp += "\n\n<b>flags</b>:"
+        tmp_chelp += "\n\n<b>✾ Flags</b>:"
 
         if isinstance(about['flags'], dict):
             for f_n, f_d in about['flags'].items():
@@ -152,7 +152,7 @@ def _format_about(about: Union[str, Dict[str, Union[str, List[str], Dict[str, st
         del about['flags']
 
     if 'options' in about:
-        tmp_chelp += "\n\n<b>options</b>:"
+        tmp_chelp += "\n\n<b>✾ Options</b>:"
 
         if isinstance(about['options'], dict):
             for o_n, o_d in about['options'].items():
@@ -163,7 +163,7 @@ def _format_about(about: Union[str, Dict[str, Union[str, List[str], Dict[str, st
         del about['options']
 
     if 'types' in about:
-        tmp_chelp += "\n\n<b>types</b>:\n"
+        tmp_chelp += "\n\n<b>✾ Types</b>:\n"
 
         if isinstance(about['types'], list):
             for _opt in about['types']:
@@ -178,7 +178,7 @@ def _format_about(about: Union[str, Dict[str, Union[str, List[str], Dict[str, st
         del about['usage']
 
     if 'examples' in about:
-        tmp_chelp += "\n\n<b>examples</b>:"
+        tmp_chelp += "\n\n<b>✾ Examples</b>:"
 
         if isinstance(about['examples'], list):
             for ex_ in about['examples']:

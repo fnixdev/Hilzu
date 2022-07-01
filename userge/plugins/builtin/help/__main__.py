@@ -78,9 +78,9 @@ async def helpme(message: Message) -> None:  # pylint: disable=missing-function-
             commands = plugins[key].loaded_commands
             size = len(commands)
 
-            out_str = f"""<b>plugin</b>: <code>{key}</code>
-<b>category</b>: <i>{plugins[key].cat}</i>
-<b>doc</b>: <i>{plugins[key].doc}</i>
+            out_str = f"""<b>✾ Plugin</b>: <code>{key}</code>
+<b>✾ Category</b>: <i>{plugins[key].cat}</i>
+<b>✾ Doc</b>: <i>{plugins[key].doc}</i>
 
 ({size}) <b>Command{'s' if size > 1 else ''}</b>\n\n"""
 
@@ -103,9 +103,9 @@ async def helpme(message: Message) -> None:  # pylint: disable=missing-function-
                     name = name.lstrip(_)
 
                 if key == name:
-                    out_str = f"""<b>command</b>: <code>{cmd.name}</code>
-<b>plugin</b>: <code>{cmd.plugin}</code>
-<b>category</b>: <i>{plugins[cmd.plugin].cat}</i>
+                    out_str = f"""<b>✾ Command</b>: <code>{cmd.name}</code>
+<b>✾ Plugin</b>: <code>{cmd.plugin}</code>
+<b>✾ Category</b>: <i>{plugins[cmd.plugin].cat}</i>
 
 {cmd.about}"""
                     break
