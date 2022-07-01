@@ -7,6 +7,12 @@
     <br>
 </p>
 
+### Installing 
+
+```bash
+bash <(curl -s https://raw.githubusercontent.com/fnixdev/Hilzu/master/resources/scripts/ubuntu_install.sh)
+```
+
 ### Project Credits 💆‍♂️
 
 * Copyright (C) 2020 - 2022 by [UsergeTeam](https://github.com/UsergeTeam)
