@@ -16,7 +16,7 @@ sudo apt install python3-pip
 
 echo "Cloning repo"
 cd ~
-git clone https://github.com/UsergeTeam/Loader.git && cd Loader
+git clone https://github.com/fnixdev/Loader.git && cd Loader
 
 echo "Installing requirements"
 bash install_req
