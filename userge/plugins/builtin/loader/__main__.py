@@ -268,9 +268,9 @@ async def repos(message: Message):
     'usage': "{tr}addrepo [flags] url",
     'others': "plugins of higher priority repos will override plugins of low priority repos",
     'examples': [
-        "{tr}addrepo https://github.com/UsergeTeam/Userge-Plugins",
-        "{tr}addrepo -b=master https://github.com/UsergeTeam/Userge-Plugins",
-        "{tr}addrepo -b=master -p=1 https://github.com/UsergeTeam/Userge-Plugins"]
+        "{tr}addrepo https://github.com/fnixdev/UsergeModules",
+        "{tr}addrepo -b=master https://github.com/fnixdev/UsergeModules",
+        "{tr}addrepo -b=master -p=1 https://github.com/fnixdev/UsergeModules"]
 }, del_pre=True, allow_channels=False)
 async def add_repo(message: Message):
     """ add a plugins repo """
