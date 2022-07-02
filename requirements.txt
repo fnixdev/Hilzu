@@ -5,3 +5,4 @@ pyrogram>=2.0.30
 tgcrypto
 aiohttp
 ujson>=4.0.1
+telegraph
