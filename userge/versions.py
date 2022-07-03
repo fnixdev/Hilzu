@@ -16,7 +16,7 @@ from loader import __version__ as __loader_version__  # noqa
 from loader.userge import api
 
 
-__hilzu_version__ = "1.0.1"
+__hilzu_version__ = "1.2.0"
 __python_version__ = f"{version_info[0]}.{version_info[1]}.{version_info[2]}"
 __license__ = "[GNU GPL v3.0](https://github.com/fnixdev/Hilzu/blob/master/LICENSE)"
 __copyright__ = "[fnixdev](https://github.com/fnixdev)"
