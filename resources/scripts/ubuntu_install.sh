@@ -3,7 +3,7 @@
 
 echo "Installing packages"
 sudo apt-get update -y
-sudo apt-get install tree wget2 p7zip-full jq ffmpeg wget git neofetch -y
+sudo apt-get install tree wget2 p7zip-full jq ffmpeg wget git neofetch mediainfo screen -y
 sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb -y
 sudo rm google-chrome-stable_current_amd64.deb
