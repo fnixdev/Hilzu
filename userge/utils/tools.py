@@ -25,6 +25,7 @@ from pyrogram import enums
 
 import userge
 
+_EMOJI_REGEXP = None
 _LOG = userge.logging.getLogger(__name__)
 _BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)]\[buttonurl:/{0,2}(.+?)(:same)?])")
 _PTN_SPLIT = re.compile(r'(\.\d+|\.|\d+)')
