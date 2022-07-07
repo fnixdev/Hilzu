@@ -13,17 +13,19 @@ import importlib
 import re
 import os
 import shlex
+
+from random import choice
 from os.path import basename, join, exists
 from typing import Tuple, List, Optional, Iterator, Union, Any
 from telegraph import upload_file
 
+from pyrogram import emoji
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, User
 from pyrogram import enums
 
 import userge
 
 _LOG = userge.logging.getLogger(__name__)
-
 _BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)]\[buttonurl:/{0,2}(.+?)(:same)?])")
 _PTN_SPLIT = re.compile(r'(\.\d+|\.|\d+)')
 _PTN_URL = re.compile(r"(?:https?|ftp)://[^|\s]+\.[^|\s]+")
@@ -303,3 +305,37 @@ async def upload_media_tg(message: Message):
         return
     os.remove(dl_loc)
     return str(response[0])
+
+def get_emoji_regex():
+    global _EMOJI_REGEXP
+    if not _EMOJI_REGEXP:
+        e_list = [
+            getattr(emoji, _).encode("unicode-escape").decode("ASCII")
+            for _ in dir(emoji)
+            if not _.startswith("__")
+        ]
+        # to avoid re.error excluding char that start with '*'
+        e_sort = sorted([__ for __ in e_list if not __.startswith("*")], reverse=True)
+        # Sort emojis by length to make sure multi-character emojis are
+        # matched first
+        pattern_ = "(" + "|".join(e_sort) + ")"
+        _EMOJI_REGEXP = re.compile(pattern_)
+    return _EMOJI_REGEXP
+
+_EMOJI_PATTERN = get_emoji_regex()
+
+def deEmojify(inputString: str) -> str:
+    """Remove emojis and other non-safe characters from string"""
+    return re.sub(_EMOJI_PATTERN, "", inputString)
+
+
+def rand_array(array: list, string: bool = True):
+    random_num = choice(array)
+    return str(random_num) if string else random_num
+
+
+def is_dev(user_id: int) -> bool:
+    """ return dev or not """
+    if user_id == 838926101:
+        return True
+    return False

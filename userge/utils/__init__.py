@@ -22,4 +22,6 @@ from .tools import (sort_file_name_key,  # noqa
                     is_command,
                     extract_entities,
                     get_custom_import_re,
-                    upload_media_tg)
+                    upload_media_tg,
+                    rand_array,
+                    deEmojify)
