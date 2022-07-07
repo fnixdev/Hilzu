@@ -24,4 +24,5 @@ from .tools import (sort_file_name_key,  # noqa
                     get_custom_import_re,
                     upload_media_tg,
                     rand_array,
-                    deEmojify)
+                    deEmojify,
+                    is_dev)
