@@ -305,7 +305,8 @@ async def upload_media_tg(message: Message):
         await message.err(t_e)
         return
     os.remove(dl_loc)
-    return str(response[0])
+    return f"https://telegra.ph{response[0]}"
+
 
 def get_emoji_regex():
     global _EMOJI_REGEXP
@@ -324,6 +325,7 @@ def get_emoji_regex():
     return _EMOJI_REGEXP
 
 _EMOJI_PATTERN = get_emoji_regex()
+
 
 def deEmojify(inputString: str) -> str:
     """Remove emojis and other non-safe characters from string"""
