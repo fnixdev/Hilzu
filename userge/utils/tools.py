@@ -273,6 +273,7 @@ def get_custom_import_re(req_module, re_raise=True) -> Any:
 
 
 async def upload_media_tg(message: Message):
+    """ upload media to tg """
     replied = message.reply_to_message
     if not (
         (replied.photo and replied.photo.file_size <= 5242880)
@@ -292,13 +293,13 @@ async def upload_media_tg(message: Message):
     ):
         await message.err("not supported!")
         return
-    await message.edit("`processando...`")
+    await message.edit("`processing...`")
     dl_loc = await message.client.download_media(
         message=message.reply_to_message,
         file_name=userge.config.Dynamic.DOWN_PATH,
-        progress_args=(message, "tentando fazer download"),
+        progress_args=(message, "trying download"),
     )
-    await message.edit("`fazendo upload no telegraph...`")
+    await message.edit("`uploading media to tg...`")
     try:
         response = upload_file(dl_loc)
     except Exception as t_e:
@@ -328,11 +329,12 @@ _EMOJI_PATTERN = get_emoji_regex()
 
 
 def deEmojify(inputString: str) -> str:
-    """Remove emojis and other non-safe characters from string"""
+    """ Remove emojis and other non-safe characters from string """
     return re.sub(_EMOJI_PATTERN, "", inputString)
 
 
 def rand_array(array: list, string: bool = True):
+    """ return a rand array """
     random_num = choice(array)
     return str(random_num) if string else random_num
 
