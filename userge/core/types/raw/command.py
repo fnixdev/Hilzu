@@ -174,7 +174,7 @@ def _format_about(about: Union[str, Dict[str, Union[str, List[str], Dict[str, st
         del about['types']
 
     if 'usage' in about:
-        tmp_chelp += f"\n\n<b>usage</b>:\n<code>{about['usage']}</code>"
+        tmp_chelp += f"\n\n<b>✾ Usage</b>:\n<code>{about['usage']}</code>"
         del about['usage']
 
     if 'examples' in about:
@@ -189,7 +189,7 @@ def _format_about(about: Union[str, Dict[str, Union[str, List[str], Dict[str, st
         del about['examples']
 
     if 'others' in about:
-        tmp_chelp += f"\n\n<b>others</b>:\n{about['others']}"
+        tmp_chelp += f"\n\n<b>✾ Others</b>:\n{about['others']}"
         del about['others']
 
     if about:

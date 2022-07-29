@@ -459,8 +459,8 @@ if userge.has_bot:
                                 "Hilzu Repo",
                                 url="https://github.com/fnixdev/Hilzu"),
                             InlineKeyboardButton(
-                                "Deploy Hilzu",
-                                url="https://t.me/fnixsup/281433")
+                                "Hilzu Loader",
+                                url="https://github.com/fnixdev/Loader")
                         ]
                     ]
                 )
