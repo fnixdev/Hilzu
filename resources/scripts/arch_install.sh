@@ -13,7 +13,6 @@ echo "[★] - Checking required packages:"
 
 for package in $packages ; do
     cmd="$cmd $package"
-    fi
 done
 
 
@@ -40,7 +39,7 @@ else
         echo "[★] - Creating hilzu-venv and installing reqs."
         python -m venv hilzu-venv
         echo "[✔] - hilzu-venv created"
-        source $HOME/Kanna-X/hilzu-venv/bin/activate
+        source $HOME/Loader/hilzu-venv/bin/activate
         echo "[★] - Installing requeriments"
         bash install_req
         echo "[✔] - Requeriments installed."
