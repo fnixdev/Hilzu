@@ -7,12 +7,27 @@
     <br>
 </p>
 
-### Installing 
+<br>
 
+## Installing 
+### Ubuntu 
 ```bash
 bash <(curl -s https://raw.githubusercontent.com/fnixdev/Hilzu/master/resources/scripts/ubuntu_install.sh)
 ```
+<br>
 
-### Project Credits 💆‍♂️
+### Arch 
+```bash
+bash <(curl -s https://raw.githubusercontent.com/fnixdev/Hilzu/master/resources/scripts/arch_install.sh)
+```
+<br>
+
+### Disclaimer
+```
+Hilzu doesn't fully support python 3.10 currently, some functions may not work. Use at your own risk.
+```
+<br>
+
+## Project Credits 💆‍♂️
 
 * Copyright (C) 2020 - 2022 by [UsergeTeam](https://github.com/UsergeTeam)

@@ -8,7 +8,7 @@ echo "★ - Intall script HilzuUB - ★"
 
 echo "[★] - Checking required packages:"
 
-sudo pacman -Sy tree wget p7zip ffmpeg wget git neofetch python-pip --noconfirm
+sudo pacman -S tree wget p7zip ffmpeg wget git neofetch python-pip --noconfirm
 
 echo "[✔] - All packages are properly installed."
 
