@@ -56,3 +56,6 @@ class Dynamic:
     EDIT_SLEEP_TIMEOUT = 10
 
     USER_IS_PREFERRED = False
+
+    PM_LOG_GROUP_ID = int(environ.get("PM_LOG_GROUP_ID", 0))
+    PM_LOGGING = False
