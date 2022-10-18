@@ -1,7 +1,7 @@
 dnspython
 heroku3
 motor
-pyrogram>=2.0.30
+pyrogram>=2.0.58
 tgcrypto
 aiohttp
 ujson>=4.0.1

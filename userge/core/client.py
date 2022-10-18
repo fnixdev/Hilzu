@@ -320,11 +320,11 @@ class Userge(_AbstractUserge):
 
     async def _log_success(self) -> None:
         # pylint: disable=protected-access
-        await self._get_log_client()._channel.log("```Hilzu started successfully```")
+        await self._get_log_client()._channel.log("<pre>Hilzu started successfully</pre>")
 
     async def _log_exit(self) -> None:
         # pylint: disable=protected-access
-        await self._get_log_client()._channel.log("```Exiting Hilzu ...```")
+        await self._get_log_client()._channel.log("<pre>Exiting Hilzu ...</pre>")
 
     def begin(self, coro: Optional[Awaitable[Any]] = None) -> None:
         """ start userge """
