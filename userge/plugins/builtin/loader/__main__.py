@@ -284,7 +284,7 @@ async def add_repo(message: Message):
         await message.err("no input url")
         return
 
-    await message.edit("```processing ...```")
+    await message.edit("<pre>processing ...</pre>")
 
     if await api.add_repo(priority, branch, url):
         await message.edit("added repo, "
@@ -292,6 +292,7 @@ async def add_repo(message: Message):
 
     else:
         await message.edit("<pre>repo was already added or invalid</pre>", del_in=3)
+
 
 
 @userge.on_cmd("rmrepo", about={
